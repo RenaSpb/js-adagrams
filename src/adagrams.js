@@ -55,3 +55,20 @@ while (hand.length < 10) {
 return hand;
 };
 
+export const usesAvailableLetters = (input, lettersInHand) => {
+  const inputUp = input.toUpperCase();
+  let handDict = {};
+
+  for (const letter of lettersInHand) {
+    handDict[letter] = (handDict[letter] || 0) + 1
+  }
+
+  for (const letter of inputUp) {
+    if (!handDict[letter] || handDict[letter] === 0) {
+      return false;
+    }
+    handDict[letter] -= 1;
+  }
+  return true;
+};
+
