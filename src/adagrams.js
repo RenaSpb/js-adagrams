@@ -72,3 +72,16 @@ export const usesAvailableLetters = (input, lettersInHand) => {
   return true;
 };
 
+export const scoreWord = (word) => {
+  let count = 0;
+  word = word.toUpperCase()
+
+  for (const letter of word) {
+    count += LETTERS_SCORE[letter];
+  }
+
+  if (word.length > 6) {count += 8}
+
+  return count
+};
+
