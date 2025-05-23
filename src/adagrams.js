@@ -85,3 +85,26 @@ export const scoreWord = (word) => {
   return count
 };
 
+export const highestScoreFrom = (words) => {
+  let bestWord = '';
+  let bestScore = 0;
+
+  for (const word of words) {
+    const wordScore = scoreWord(word)
+
+    if (wordScore > bestScore) {
+      bestScore = wordScore;
+      bestWord = word;
+    }
+
+    else if (wordScore === bestScore) {
+      if (bestWord.length !== 10) {
+        if (word.length === 10 || word.length < bestWord.length) {
+          bestWord = word;
+          bestScore = wordScore;
+        }
+      }
+    }
+  }
+  return { word: bestWord, score: bestScore };
+};
