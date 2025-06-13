@@ -80,7 +80,9 @@ export const scoreWord = (word) => {
     count += LETTERS_SCORE[letter];
   }
 
-  if (word.length > 6) {count += 8}
+  if (word.length > 6) {
+  count += 8
+  }
 
   return count
 };
