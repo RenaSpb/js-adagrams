@@ -97,9 +97,7 @@ export const highestScoreFrom = (words) => {
     if (wordScore > bestScore) {
       bestScore = wordScore;
       bestWord = word;
-    }
-
-    else if (wordScore === bestScore) {
+    } else if (wordScore === bestScore) {
       if (bestWord.length !== 10) {
         if (word.length === 10 || word.length < bestWord.length) {
           bestWord = word;
