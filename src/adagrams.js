@@ -28,7 +28,7 @@ export const drawLetters = () => {
 
 for (const letter of letters) {
   totalWeight += LETTER_POOL[letter];
-  cumulativeWeights.push({letter: letter, weight : totalWeight})
+  cumulativeWeights.push({ letter: letter, weight : totalWeight })
 }
 
 const randomLetter = () => {
